@@ -21,7 +21,7 @@ const Checkout = () => {
   const checkoutOptions = {
     lineItems: [item],
     mode: "payment",
-    successUrl: ` `,
+    successUrl: `${window.location.origin} `,
     cancelUrl: ` `,
   };
 
