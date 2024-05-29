@@ -21,29 +21,44 @@ const Checkout = () => {
   const checkoutOptions = {
     lineItems: [item],
     mode: "payment",
-    successUrl: `${window.location.origin} /success`,
-    cancelUrl: `${window.location.origin} /cancel`,
+    successUrl: `${window.location.origin}/success`,
+    cancelUrl: `${window.location.origin}/cancel`,
   };
 
-  const redirectCheckout = async () => {
+  const redirectToCheckout = async () => {
     console.log("redirectCheckout");
 
     const stripe = await getStripe();
 
-    const { error } = await stripe.redirectToCheckout(checkoutOptions);
+    //console.log(stripe);
+
+    const error = await stripe.redirectToCheckout(checkoutOptions);
 
     console.log("stripe checkout error : ", error);
   };
 
   return (
-    <div className="checkout">
-      <h1>Stripe Checkout</h1>
+    <div className="flex flex-col items-center">
+      <h1 className="mt-4">Stripe Checkout</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad omnis
         mollitia eaque placeat cum esse reiciendis aspernatur repellat ipsam
         quis.
       </p>
-      <img src={botella} alt="botella" />
+      <img src={botella} alt="botella" className="w-[25%] " />
+      <div className="w-[300px] flex flex-row justify-around items-center">
+        <img
+          src={CardIcon}
+          className="w-[100px] hover:cursor-pointer"
+          alt="card"
+        />
+        <button
+          onClick={redirectToCheckout}
+          className="text-white bg-slate-500 hover:bg-slate-800 px-4 py-2 rounded"
+        >
+          Comprar
+        </button>
+      </div>
     </div>
   );
 };
