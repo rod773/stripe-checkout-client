@@ -32,7 +32,7 @@ const Checkout = () => {
 
     //console.log(stripe);
 
-    const error = await stripe.redirectToCheckout(checkoutOptions);
+    const { error } = await stripe.redirectToCheckout(checkoutOptions);
 
     console.log("stripe checkout error : ", error);
   };
