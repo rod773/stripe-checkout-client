@@ -1,6 +1,6 @@
 import React from "react";
 import CardIcon from "images/credit-card.svg";
-import ProductImg from "images/product-image.jpg";
+import botella from "images/botellla.jpg";
 import { loadStripe } from "@stripe/stripe-js";
 
 let stripePromise;
@@ -38,6 +38,12 @@ const Checkout = () => {
   return (
     <div className="checkout">
       <h1>Stripe Checkout</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad omnis
+        mollitia eaque placeat cum esse reiciendis aspernatur repellat ipsam
+        quis.
+      </p>
+      <img src={botella} alt="botella" />
     </div>
   );
 };
