@@ -1,5 +1,6 @@
 import React from "react";
-import CardImage from "images/credit-card.svg";
+import CardIcon from "images/credit-card.svg";
+import ProductImg from "images/product-image.jpg";
 import { loadStripe } from "@stripe/stripe-js";
 
 const Checkout = () => {
