@@ -15,9 +15,21 @@ const getStripe = () => {
 const Checkout = () => {
   const item = {
     price: "price_1PLhPCHui8JNyJ0cnH0WxjiZ",
+    quantity: 1,
   };
 
-  return <div>Checkout</div>;
+  const checkoutOptions = {
+    lineItems: [item],
+    mode: "payment",
+    successUrl: ` `,
+    cancelUrl: ` `,
+  };
+
+  return (
+    <div className="checkout">
+      <h1>Stripe Checkout</h1>
+    </div>
+  );
 };
 
 export default Checkout;
