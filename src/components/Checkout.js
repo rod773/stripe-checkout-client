@@ -25,6 +25,14 @@ const Checkout = () => {
     cancelUrl: `${window.location.origin} /cancel`,
   };
 
+  const redirectCheckout = async () => {
+    console.log("redirectCheckout");
+
+    const stripe = await getStripe();
+
+    await stripe.redirectToCheckout(checkoutOptions);
+  };
+
   return (
     <div className="checkout">
       <h1>Stripe Checkout</h1>
