@@ -1,7 +1,12 @@
 import React from "react";
 
 const Success = () => {
-  return <div>Success</div>;
+  return (
+    <div className="text-2xl">
+      <h1>Pago Exitoso</h1>
+      <h1>Gracias por su compra</h1>
+    </div>
+  );
 };
 
 export default Success;
