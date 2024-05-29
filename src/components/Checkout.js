@@ -30,7 +30,9 @@ const Checkout = () => {
 
     const stripe = await getStripe();
 
-    console.log(stripe);
+    console.log(stripe.redirectToCheckout);
+
+    stripe.redirectToCheckout(checkoutOptions);
 
     // await stripe.checkoutSessions.create({
     //   success_url: `${window.location.origin}/success`,
