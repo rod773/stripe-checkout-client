@@ -1,6 +1,6 @@
 import React from "react";
 import CardIcon from "images/credit-card.svg";
-import botella from "images/botellla.jpg";
+import botella from "images/botellla.png";
 import { loadStripe } from "@stripe/stripe-js";
 
 let stripePromise;
