@@ -30,22 +30,7 @@ const Checkout = () => {
 
     const stripe = await getStripe();
 
-    console.log(stripe.redirectToCheckout);
-
-    stripe.redirectToCheckout(checkoutOptions);
-
-    // await stripe.checkoutSessions.create({
-    //   success_url: `${window.location.origin}/success`,
-    //   line_items: [
-    //     {
-    //       price: "price_1PLhPCHui8JNyJ0cnH0WxjiZ",
-    //       quantity: 1,
-    //     },
-    //   ],
-    //   mode: "payment",
-    // });
-
-    //stripe.redirectToCheckout(checkoutOptions);
+    await stripe.redirectToCheckout(checkoutOptions);
   };
 
   return (
